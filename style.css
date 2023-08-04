@@ -1,21 +1,20 @@
-body {
-    border: 2px solid red;
-}
-
-/*.container {
+.container {
     display: flex;
-}*/
+    flex-direction: column;
+    border: 2px solid red;
+    width: 75%;
+    margin: auto;
+    aspect-ratio: 1 / 1;
+}
 
 .rows {
     border: 2px solid blue;
     display: flex;
-    height: 15px;
+    flex: 1;
 }
 
 .squares {
     flex:1;
     border: 2px solid green;
-    height: 10px;
-    width: 10px;
 }
 
