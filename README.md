@@ -6,6 +6,9 @@ The grid is to be made with JavaScript not via copy/paste in HTML. Flexbox is to
 
 1. Create a container via html.
 2. Use JS to create 16 rows of 16 squares. (For loop?)
+    Use a for loop to create 16 divs that will make the row.
+    Use css to get the row of divs square and horizontal.
+    Use another loop to make the one row 16 rows.
 3. Use CSS/Flexbox to make the box live to fit the screen.
 4. Using CSS ensure no margins, borders, or padding are on the squares.
 5. Create a "hover" effect via JS that causes the squares to change colors as the mouse cursor moves over the squares.
