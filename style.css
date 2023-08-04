@@ -8,13 +8,13 @@
 }
 
 .rows {
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     display: flex;
     flex: 1;
 }
 
 .squares {
     flex:1;
-    border: 2px solid green;
+    /*border: 2px solid green;*/
 }
 
