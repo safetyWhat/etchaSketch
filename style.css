@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     border: 2px solid red;
-    width: 75%;
+    width: 50%;
     margin: auto;
     aspect-ratio: 1 / 1;
 }
@@ -14,7 +14,18 @@
 }
 
 .squares {
-    flex:1;
     /*border: 2px solid green;*/
+    flex:1;
+}
+
+.btnBox {
+    width: 50%;
+    /*border: 2px solid red;*/
+    margin: auto;
+    text-align: center;
+}
+
+.btn {
+    margin: 20px auto;
 }
 

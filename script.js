@@ -1,28 +1,52 @@
 const container = document.querySelector('.container');
-let rowNum = 1
-let squareNum = 1
+let rowNum = 1;
+let squareNum = 1;
+let y = 16;
+let squares = document.querySelectorAll('.squares');
 
-for (x = 0; x < 16; x++) {
-    let row = 'row' + rowNum;
-    //console.log(row);
-    const rows = document.createElement('div');
-    rows.setAttribute('id', row);
-    rows.className = 'rows';
-    container.appendChild(rows);
+let draw = function() {
+    let squares = document.querySelectorAll('.squares');
+    squares.forEach(function(changeColor) {
+        changeColor.addEventListener("mouseenter", (event) => {
+            event.target.style.background = "black";
+            }, false);
+    })
+}
+
+let setGrid = function (y){
+    for (x = 0; x < y; x++) { //create rows within container
+        let row = 'row' + rowNum;
+        const rows = document.createElement('div');
+        rows.setAttribute('id', row);
+        rows.className = 'rows';
+        container.appendChild(rows);
     
-    for (i = 0; i < 16; i++) {
-        //console.log(squareNum);
+    for (i = 0; i < y; i++) { //create squares within the row
         const squares = document.createElement('div');
         squares.className = 'squares';
-        //squares.textContent = squareNum;
         rows.appendChild(squares);
         squareNum++
     }
     rowNum++
+    }
 }
-let squares = document.querySelectorAll('.squares')
-squares.forEach(function(changeColor) {
-changeColor.addEventListener("mouseenter", (event) => {
-    event.target.style.background = "black";
-}, false);})
+setGrid(y);
+draw();
 
+let reset = function() {
+    let squares = document.querySelectorAll('.squares');
+    squares.forEach(el => el.remove()); //removes all current squares from rows
+    let rows = document.querySelectorAll('.rows');
+    rows.forEach(el => el.remove()); //removes all rows from the container
+    let gridNum = prompt("Enter a number between 4 and 100", '4');
+    if (gridNum > 100) { //if user enters number greater than 100, default to 100
+        gridNum = 100
+        console.log(gridNum)
+    } else if (gridNum < 4) { //if user enters number less than 4, default to 4
+        gridNum = 4
+    }
+    y = gridNum
+    console.log(y)
+    setGrid(y);
+    draw();
+}
